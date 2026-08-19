@@ -74,10 +74,23 @@ LUCA is organized as a sequence of specialized stages:
 
 ## Validation
 
-The structured extractor was validated against a hand-annotated gold standard of core financial metrics, with numeric comparison at 0.5 percent relative tolerance:
+The structured extraction path was run across 288 10-K filings from 96
+US-listed companies (three fiscal years per company, FY2022 to FY2024),
+producing a per-filing extraction manifest. Field coverage across the
+corpus was 95.7 percent; missing values are documented and correspond to
+metrics a company does not tag in XBRL (for example, banks that report no
+operating income line).
 
-- **XBRL structured extraction: 100 percent accuracy.** The extractor is deterministic, so this result has no sampling variance.
-- On the same items, LLM-only baselines reached about 50 percent (structured prompting) and 3.3 percent (naive prompting), which motivates the hybrid design: XBRL for numbers, LLM for text.
+Accuracy was measured against a hand-annotated gold standard of 60 metric
+datapoints (6 core metrics across 10 companies), annotated directly from
+the filings:
+
+- XBRL structured extraction: 100 percent (60/60). The extractor is
+  deterministic, so this result has no sampling variance.
+- On the same items, LLM-only baselines reached about 50 percent
+  (structured prompting, with run-to-run variation under sampling) and 3.3
+  percent (naive prompting), which motivates the hybrid design: XBRL for
+  numbers, LLM for text.
 
 ---
 
