@@ -58,6 +58,20 @@ LUCA is organized as a sequence of specialized stages:
 
 ---
 
+## Technologies
+
+| Category | Stack |
+|----------|-------|
+| **LLM** | Qwen2.5-7B-Instruct, Q4_K_M quantization, served locally with Ollama |
+| **Data source** | SEC EDGAR (submissions, company facts, filing archive) via the requests HTTP client |
+| **Structured extraction** | Rule-based mapping of US-GAAP XBRL tags from EDGAR company facts; plain Python, no LLM |
+| **HTML parsing** | BeautifulSoup4 with lxml |
+| **Derived metrics** | Deterministic Python computation (margins, returns, leverage, year-over-year growth) |
+| **Testing** | pytest with fully mocked LLM and HTTP calls |
+| **Output** | JSON contracts per stage, Markdown investment memo |
+
+---
+
 ## Validation
 
 The structured extractor was validated against a hand-annotated gold standard of core financial metrics, with numeric comparison at 0.5 percent relative tolerance:
@@ -70,6 +84,17 @@ The structured extractor was validated against a hand-annotated gold standard of
 ## Traceability
 
 Traceability is the design priority. Every extracted figure maps back to its source in the filing: the pipeline records where each value came from, so any number in the output can be checked against the original document. This matters in financial contexts, where an unverifiable number is a liability rather than an asset.
+
+---
+
+## Limitations
+
+- **10-K only**: the pipeline ingests annual 10-K filings from SEC EDGAR. Quarterly reports (10-Q), other SEC forms and non-SEC filings are not supported.
+- **XBRL dependence**: structured extraction relies on the filing's XBRL company facts. If a company did not tag a metric with one of the expected US-GAAP tags, that metric comes back empty; the tag fallback chains are finite.
+- **Bounded metric set**: the structured extractor targets a fixed set of core financial metrics. Anything outside it is not extracted, and derived figures inherit that boundary (for example, gross margin cannot be computed because cost of revenue is not in the set).
+- **Qualitative layer limited to risk factors**: the LLM only processes the risk factor section (Item 1A). Forward-looking statement extraction and management tone analysis are not implemented.
+- **LLM outputs require human review**: risk extraction and classification come from a quantized 7B model and are pending human validation.
+- **No consolidated traceability export**: per-value source references exist in the stage outputs, but the consolidated traceability report (Excel export) is not yet functional end to end.
 
 ---
 
