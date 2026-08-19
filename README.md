@@ -81,6 +81,17 @@ corpus was 95.7 percent; missing values are documented and correspond to
 metrics a company does not tag in XBRL (for example, banks that report no
 operating income line).
 
+Coverage per metric across the 288 filings:
+
+| Metric | Coverage | Dominant reason for missing values |
+|--------|----------|------------------------------------|
+| Revenue | 100.0 percent | none missing |
+| Net income | 100.0 percent | none missing |
+| Operating income | 76.0 percent | no operating income subtotal in the filing (financial companies by presentation convention, plus several pharmaceutical and energy issuers) |
+| Total assets | 100.0 percent | none missing |
+| Total equity | 100.0 percent | none missing |
+| Diluted EPS | 97.9 percent | EPS tagged only per share class, which the aggregate XBRL company facts feed omits |
+
 Accuracy was measured against a hand-annotated gold standard of 60 metric
 datapoints (6 core metrics across 10 companies), annotated directly from
 the filings:
