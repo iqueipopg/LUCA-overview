@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you reference LUCA, please cite it as below."
+title: "LUCA: LLM-based Unified Corporate Analyst"
+abstract: "An LLM + XBRL pipeline that extracts structured financial data from SEC 10-K filings. Documentation-only overview; the implementation lives in a private repository."
+type: software
+authors:
+  - family-names: "Queipo de Llano Perez-Gascon"
+    given-names: "Ignacio"
+    email: "iqueipo.pg24@gmail.com"
+repository-code: "https://github.com/iqueipopg/LUCA-overview"
+date-released: 2026-08-19

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" width="380">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="50%" stop-color="#0891B2"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="gc1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(10,10)">
+    <circle cx="60" cy="60" r="56" fill="url(#gc1)" opacity="0.1"/>
+    <circle cx="60" cy="60" r="56" fill="none" stroke="url(#gc1)" stroke-width="2"/>
+    <line x1="14" y1="88" x2="106" y2="88" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,2"/>
+    <rect x="30" y="62" width="12" height="26" rx="2" fill="#1D4ED8" opacity="0.85"/>
+    <rect x="50" y="48" width="12" height="40" rx="2" fill="#0891B2" opacity="0.85"/>
+    <rect x="70" y="34" width="12" height="54" rx="2" fill="#059669" opacity="0.85"/>
+    <polyline points="24,58 36,50 56,40 76,26 92,20" fill="none" stroke="url(#gc1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="92" cy="20" r="4" fill="#059669"/>
+  </g>
+  <text x="148" y="96" font-family="'Segoe UI',Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="-2" fill="url(#g1)">LUCA</text>
+  <text x="150" y="120" font-family="'Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="500" letter-spacing="3" fill="#64748B">LLM-BASED UNIFIED CORPORATE ANALYST</text>
+  <line x1="150" y1="130" x2="456" y2="130" stroke="url(#g1)" stroke-width="1.2" opacity="0.4"/>
+</svg>
