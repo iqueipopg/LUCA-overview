@@ -1,3 +1,5 @@
+> **This overview is archived. The full source code, with its history, is now public at [iqueipopg/LUCA](https://github.com/iqueipopg/LUCA).**
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/logo_horizontal_dark.svg">
